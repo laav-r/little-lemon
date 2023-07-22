@@ -1,0 +1,32 @@
+.footer {
+  background-color: #495e57;
+  width: 100%;
+  height: max-content;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-img {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.footer-list {
+  margin: 0;
+  list-style-type: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #edefee;
+}
+
+.footer-list a {
+  text-decoration: none;
+  color: #edefee;
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: 1rem;
+}
