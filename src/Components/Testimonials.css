@@ -1,0 +1,51 @@
+.testimonials {
+  background-color: #495e57;
+  height: max-content;
+}
+
+.testimonials-title {
+  font-family: "Markazi Text", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #f4ce14;
+  text-align: center;
+}
+
+.carousel-img {
+  width: 10rem;
+  border-radius: 50%;
+  margin: 2rem auto 15rem;
+}
+
+.name {
+  font-size: 1.5rem;
+  color: #edefee;
+}
+
+.rating {
+  font-size: 1.125rem;
+}
+
+.review {
+  padding: 0 30%;
+  color: #edefee;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1280px) {
+  .review {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .carousel-img {
+    margin-bottom: 22rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .carousel-img {
+    margin-bottom: 18rem;
+  }
+}
+

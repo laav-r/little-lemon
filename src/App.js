@@ -1,16 +1,25 @@
 import React from "react";
-import Header from "./Components/Header";
-import Main from "./Components/Main";
-import Footer from "./Components/Footer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./Components/HomePage";
+import Menu from "./Components/Menu";
+// import About from "./Components/About";
+import TableReservation from "./Components/TableReservation";
+import OrderOnline from "./Components/OrderOnline";
+import Login from "./Components/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const router = createBrowserRouter([
+  {path: "/", element: <HomePage />},
+  // {path: "/about", element: <About />},
+  {path: "/menu", element: <Menu />},
+  {path: "/reservations", element: <TableReservation />},
+  {path: "/order-online", element: <OrderOnline />},
+  {path: "/login", element: <Login />}
+])
 
 function App() {
   return (
-    <React.Fragment>
-      <Header />
-      <Main />
-      <Footer />
-    </React.Fragment>
+    <RouterProvider router={router} />
   );
 }
 

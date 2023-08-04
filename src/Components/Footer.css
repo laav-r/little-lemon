@@ -2,13 +2,6 @@
   background-color: #495e57;
   width: 100%;
   height: max-content;
-  position: absolute;
-  bottom: 0;
-}
-
-.footer-img {
-  border-radius: 1rem;
-  width: 100%;
 }
 
 .footer-list {
@@ -17,6 +10,7 @@
   font-size: 1.125rem;
   font-weight: 500;
   color: #edefee;
+  line-height: 1.5;
 }
 
 .footer-list a {
@@ -29,4 +23,19 @@
   justify-content: flex-start;
   gap: 2rem;
   margin-top: 1rem;
+}
+
+.contact {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 576px) {
+  .footer-img {
+    display: none;
+  }
+
+  .footer-list {
+    margin-bottom: 1rem;
+  }
 }
