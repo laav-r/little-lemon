@@ -1,5 +1,6 @@
 const dishes = [
   {
+    id: "d1",
     image: "images/greek-salad.jpg",
     alt: "Greek salad",
     title: "Greek salad",
@@ -8,6 +9,7 @@ const dishes = [
       "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
   },
   {
+    id: "d2",
     image: "images/bruschetta.jpg",
     alt: "Bruschetta",
     title: "Bruschetta",
@@ -16,6 +18,7 @@ const dishes = [
       "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. Toppings of tomato, veggies, beans, cured pork, or cheese are examples of variations. In Italy, a brustolina grill is frequently used to create bruschetta.",
   },
   {
+    id: "d3",
     image: "images/lemon-dessert.jpg",
     alt: "Lemon dessert",
     title: "Lemon dessert",

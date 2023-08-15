@@ -1,0 +1,23 @@
+.specials {
+  margin-top: 11rem;
+}
+
+.heading {
+  font-family: "Markazi Text", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.button {
+    background-color: #ee9972!important;
+}
+
+.button:hover {
+  background-color: #fbdabb!important;
+}
+
+@media  screen and (max-width: 576px) {
+  .specials {
+    margin-top: 2rem;
+  }
+}

@@ -2,36 +2,49 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import "./Header.css";
 import { Link } from "react-router-dom";
+import styles from "./Header.module.css";
 
 function NavigationBar() {
   return (
     <header>
-      <Navbar expand="lg" bg="light" data-bs-theme="light">
+      <Navbar
+        expand="lg"
+        bg="light"
+        data-bs-theme="light"
+        fixed="top"
+      >
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <img src="images/Logo.svg" alt="Little Lemon Logo" className="logo" />
+            <img
+              src="images/Logo.svg"
+              alt="Little Lemon Logo"
+              className={styles.logo}
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto menu-link">
+            <Nav
+              variant="underline"
+              defaultActiveKey="/"
+              className={`ms-auto ${styles.link}`}
+            >
               <Nav.Link as={Link} to="/">
                 HOME
               </Nav.Link>
-              <Nav.Link href="#about">
+              <Nav.Link href="#about" eventKey="about">
                 ABOUT
               </Nav.Link>
-              <Nav.Link as={Link} to="/menu">
+              <Nav.Link as={Link} to="/menu" eventKey="menu">
                 MENU
               </Nav.Link>
-              <Nav.Link as={Link} to="/reservations">
+              <Nav.Link as={Link} to="/reservations" eventKey="reservations">
                 RESERVATIONS
               </Nav.Link>
-              <Nav.Link as={Link} to="/order-online">
+              <Nav.Link as={Link} to="/order-online" eventKey="order-online">
                 ORDER ONLINE
               </Nav.Link>
-              <Nav.Link as={Link} to="/login">
+              <Nav.Link as={Link} to="/login" eventKey="login">
                 LOGIN
               </Nav.Link>
             </Nav>

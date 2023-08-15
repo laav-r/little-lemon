@@ -1,0 +1,14 @@
+.button {
+  background-color: #f4ce14;
+  font-family: "Karla", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #333333;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 3rem;
+}
+
+.button:hover {
+    background-color: #f9d832;
+}

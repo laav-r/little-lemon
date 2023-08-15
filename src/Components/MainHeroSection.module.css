@@ -9,6 +9,7 @@
     background-color: #495e57;
     font-family: 'Markazi Text', serif;
     height: max-content;
+    margin-top: 5rem;
 }
 
 .title {
@@ -26,25 +27,9 @@
 
 .description {
     font-family: 'Karla', sans-serif;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: #EDEFEE;
     font-weight: 400;
-}
-
-.reserve-btn {
-    background-color: #F4CE14;
-    font-family: 'Karla', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #333333;
-    border: none;
-    border-radius: 1rem;
-    padding: 0.5rem 1rem;
-    margin-top: 3rem;
-}
-
-.reserve-btn:hover {
-    background-color: #f9d832;
 }
 
 @media screen and (max-width: 576px) {

@@ -1,0 +1,24 @@
+.booking-form {
+  font-family: "Karla", sans-serif;
+}
+
+.required {
+  font-size: 1.125rem;
+  color: #333333;
+  margin: 0;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #333333;
+  margin-top: 1.5rem;
+}
+
+.form-control {
+  resize: none;
+}
+
+.form-text {
+  font-size: 1rem;
+}

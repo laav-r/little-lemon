@@ -1,20 +1,20 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./Components/HomePage";
-import Menu from "./Components/Menu";
-// import About from "./Components/About";
-import TableReservation from "./Components/TableReservation";
-import OrderOnline from "./Components/OrderOnline";
-import Login from "./Components/Login";
+import HomePage from "./Pages/HomePage";
+import Menu from "./Pages/Menu";
+import TableReservation from "./Pages/TableReservation";
+import OrderOnline from "./Pages/OrderOnline";
+import Login from "./Pages/Login";
+import ConfirmBooking from "./Components/Booking/ConfirmBooking";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
   {path: "/", element: <HomePage />},
-  // {path: "/about", element: <About />},
   {path: "/menu", element: <Menu />},
   {path: "/reservations", element: <TableReservation />},
   {path: "/order-online", element: <OrderOnline />},
-  {path: "/login", element: <Login />}
+  {path: "/login", element: <Login />},
+  {path: "/confirmation", element: <ConfirmBooking />}
 ])
 
 function App() {

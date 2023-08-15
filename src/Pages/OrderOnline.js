@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 function OrderOnline() {
   return (
     <React.Fragment>
       <Header />
       <main>
-        <button>Order online</button>
+        
       </main>
       <Footer />
     </React.Fragment>

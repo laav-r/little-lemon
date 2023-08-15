@@ -1,17 +1,17 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
-function TableReservation() {
+function Menu() {
     return (
         <React.Fragment>
             <Header />
             <main>
-                <button>Reserve a table</button>
+                
             </main>
             <Footer />
         </React.Fragment>
     )
 }
 
-export default TableReservation;
+export default Menu;

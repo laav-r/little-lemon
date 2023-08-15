@@ -1,5 +1,5 @@
 import React from "react";
-import CallToAction from "./CallToAction";
+import MainHeroSection from "../MainHeroSection";
 import Specials from "./Specials";
 import Testimonials from "./Testimonials";
 import About from "./About";
@@ -7,7 +7,7 @@ import About from "./About";
 function Main() {
   return (
     <main>
-      <CallToAction />
+      <MainHeroSection />
       <Specials />
       <Testimonials />
       <About />

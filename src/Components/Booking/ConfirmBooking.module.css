@@ -1,0 +1,23 @@
+.container {
+    margin: auto;
+    padding: 1rem 0;
+    background-color: #edefee;
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 5px 5px 10px #cfd0d0;
+}
+
+.res {
+    font-size: 1.5rem;
+    color: #333333;
+}
+
+.res-summary {
+    composes: res;
+    font-weight: 700;
+}
+
+.res-details {
+    composes: res;
+    font-weight: 500;
+}

@@ -3,7 +3,7 @@
   height: max-content;
 }
 
-.testimonials-title {
+.title {
   font-family: "Markazi Text", serif;
   font-size: 2.5rem;
   font-weight: 500;
@@ -11,7 +11,7 @@
   text-align: center;
 }
 
-.carousel-img {
+.image {
   width: 10rem;
   border-radius: 50%;
   margin: 2rem auto 15rem;
@@ -38,13 +38,13 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
-  .carousel-img {
+  .image {
     margin-bottom: 22rem;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
-  .carousel-img {
+  .image {
     margin-bottom: 18rem;
   }
 }

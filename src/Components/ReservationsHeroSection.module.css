@@ -1,0 +1,19 @@
+.hero-section {
+  margin-top: 5rem;
+  background-image: url("../../public/images/reservation-bg.png");
+  background-size: cover;
+  background-position: center;
+  font-family: "Markazi Text", serif;
+}
+
+.title {
+    composes: title from "./MainHeroSection.module.css";
+}
+
+.subtitle {
+    composes: subtitle from "./MainHeroSection.module.css";
+}
+
+.description {
+    composes: description from "./MainHeroSection.module.css";
+}
