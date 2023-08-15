@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { Row, Col, Form } from "react-bootstrap";
 import Button from "../../UI/Button";
 import FormInput from "../../UI/FormInput";
-import { nanoid } from "nanoid";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { submitFormData } from "../../utils/utils";
@@ -81,193 +80,203 @@ function BookingForm({ availableTimes, dispatchAvailableTimes }) {
   );
 
   return (
-    <Form onSubmit={formik.handleSubmit} className="booking-form mb-5">
-      <Row>
-        <Col lg={6}>
-          <em>
-            <p className={styles.required}>All fields marked with * are required</p>
-          </em>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={4}>
-          <Form.Group controlId="date">
-            <Form.Label className={styles["form-label"]}>Date*</Form.Label>
-            <Form.Control
-              type="date"
-              name="date"
-              min={minDate}
-              max={maxDate}
-              {...formik.getFieldProps("date")}
-              size="lg"
-              aria-describedby="date"
-              isInvalid={formik.touched.date && formik.errors.date}
+      <Form onSubmit={formik.handleSubmit} className="booking-form mb-5">
+        <Row>
+          <Col lg={6}>
+            <em>
+              <p className={styles.required}>
+                All fields marked with * are required
+              </p>
+            </em>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={4}>
+            <Form.Group controlId="date">
+              <Form.Label className={styles["form-label"]}>Date*</Form.Label>
+              <Form.Control
+                type="date"
+                name="date"
+                min={minDate}
+                max={maxDate}
+                {...formik.getFieldProps("date")}
+                size="lg"
+                aria-describedby="date"
+                isInvalid={formik.touched.date && formik.errors.date}
+              />
+              <Form.Text id="date" bsPrefix="form-text">
+                {formik.touched.date && formik.errors.date ? (
+                  <div>{formik.errors.date}</div>
+                ) : null}
+              </Form.Text>
+            </Form.Group>
+          </Col>
+          <Col lg={4}>
+            <Form.Group controlId="time">
+              <Form.Label className={styles["form-label"]}>Time*</Form.Label>
+              <Form.Select
+                name="time"
+                {...formik.getFieldProps("time")}
+                size="lg"
+                aria-describedby="time"
+                isInvalid={formik.touched.time && formik.errors.time}
+              >
+                {availableTimes.map((availableTime, index) => (
+                  <option key={index}>{availableTime}</option>
+                ))}
+              </Form.Select>
+              <Form.Text id="time">
+                {formik.touched.time && formik.errors.time ? (
+                  <div>{formik.errors.time}</div>
+                ) : null}
+              </Form.Text>
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={6}>
+            <Form.Group controlId="guestsNumber">
+              <Form.Label className={styles["form-label"]}>
+                Number of guests*
+              </Form.Label>
+              <Form.Control
+                type="number"
+                name="guestsNumber"
+                {...formik.getFieldProps("guestsNumber")}
+                size="lg"
+                aria-describedby="guestNumber"
+                isInvalid={
+                  formik.touched.guestsNumber && formik.errors.guestsNumber
+                }
+              />
+              <Form.Text id="guestsNumber">
+                {formik.touched.guestsNumber && formik.errors.guestsNumber ? (
+                  <div>{formik.errors.guestsNumber}</div>
+                ) : null}
+              </Form.Text>
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={6}>
+            <Form.Group controlId="tableType">
+              <Form.Label className={styles["form-label"]}>
+                Type of table (optional)
+              </Form.Label>
+              <Form.Select
+                name="tableType"
+                size="lg"
+                {...formik.getFieldProps("tableType")}
+              >
+                <option>Select table type</option>
+                <option>Indoor</option>
+                <option>Outdoor</option>
+              </Form.Select>
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={6}>
+            <Form.Group controlId="occasion">
+              <Form.Label className={styles["form-label"]}>
+                Occasion*
+              </Form.Label>
+              <Form.Select
+                name="occasion"
+                size="lg"
+                {...formik.getFieldProps("occasion")}
+              >
+                <option>Select the occasion</option>
+                <option>Birthday</option>
+                <option>Anniversary</option>
+                <option>Engagement</option>
+                <option>None</option>
+              </Form.Select>
+            </Form.Group>
+          </Col>
+        </Row>
+        <hr className="mt-5" />
+        <Row>
+          <Col lg={6} md={6}>
+            <FormInput
+              id="guestName"
+              name="guestName"
+              label="Name*"
+              labelStyle={styles["form-label"]}
+              {...formik.getFieldProps("guestName")}
+              ariaDescribedby="guestName"
+              isInvalid={formik.touched.guestName && formik.errors.guestName}
             />
-            <Form.Text id="date" bsPrefix="form-text">
-              {formik.touched.date && formik.errors.date ? (
-                <div>{formik.errors.date}</div>
+            <Form.Text id="guestName">
+              {formik.touched.guestName && formik.errors.guestName ? (
+                <div>{formik.errors.guestName}</div>
               ) : null}
             </Form.Text>
-          </Form.Group>
-        </Col>
-        <Col lg={4}>
-          <Form.Group controlId="time">
-            <Form.Label className={styles["form-label"]}>Time*</Form.Label>
-            <Form.Select
-              name="time"
-              {...formik.getFieldProps("time")}
-              size="lg"
-              aria-describedby="time"
-              isInvalid={formik.touched.time && formik.errors.time}
-            >
-              {availableTimes.map((availableTime) => (
-                <option key={nanoid()}>{availableTime}</option>
-              ))}
-            </Form.Select>
-            <Form.Text id="time">
-              {formik.touched.time && formik.errors.time ? (
-                <div>{formik.errors.time}</div>
-              ) : null}
-            </Form.Text>
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={6}>
-          <Form.Group controlId="guestsNumber">
-            <Form.Label className={styles["form-label"]}>Number of guests*</Form.Label>
-            <Form.Control
-              type="number"
-              name="guestsNumber"
-              {...formik.getFieldProps("guestsNumber")}
-              size="lg"
-              aria-describedby="guestNumber"
-              isInvalid={
-                formik.touched.guestsNumber && formik.errors.guestsNumber
-              }
+            <FormInput
+              id="email"
+              name="email"
+              label="Email*"
+              labelStyle={styles["form-label"]}
+              {...formik.getFieldProps("email")}
+              ariaDescribedby="email"
+              isInvalid={formik.touched.email && formik.errors.email}
             />
-            <Form.Text id="guestsNumber">
-              {formik.touched.guestsNumber && formik.errors.guestsNumber ? (
-                <div>{formik.errors.guestsNumber}</div>
+            <Form.Text id="email">
+              {formik.touched.email && formik.errors.email ? (
+                <div>{formik.errors.email}</div>
               ) : null}
             </Form.Text>
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={6}>
-          <Form.Group controlId="tableType">
-            <Form.Label className={styles["form-label"]}>Type of table (optional)</Form.Label>
-            <Form.Select
-              name="tableType"
-              size="lg"
-              {...formik.getFieldProps("tableType")}
-            >
-              <option>Select table type</option>
-              <option>Indoor</option>
-              <option>Outdoor</option>
-            </Form.Select>
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={6}>
-          <Form.Group controlId="occasion">
-            <Form.Label className={styles["form-label"]}>Occasion*</Form.Label>
-            <Form.Select
-              name="occasion"
-              size="lg"
-              {...formik.getFieldProps("occasion")}
-            >
-              <option>Select the occasion</option>
-              <option>Birthday</option>
-              <option>Anniversary</option>
-              <option>Engagement</option>
-              <option>None</option>
-            </Form.Select>
-          </Form.Group>
-        </Col>
-      </Row>
-      <hr className="mt-5" />
-      <Row>
-        <Col lg={6} md={6}>
-          <FormInput
-            id="guestName"
-            name="guestName"
-            label="Name*"
-            labelStyle={styles["form-label"]}
-            {...formik.getFieldProps("guestName")}
-            ariaDescribedby="guestName"
-            isInvalid={formik.touched.guestName && formik.errors.guestName}
-          />
-          <Form.Text id="guestName">
-            {formik.touched.guestName && formik.errors.guestName ? (
-              <div>{formik.errors.guestName}</div>
-            ) : null}
-          </Form.Text>
-          <FormInput
-            id="email"
-            name="email"
-            label="Email*"
-            labelStyle={styles["form-label"]}
-            {...formik.getFieldProps("email")}
-            ariaDescribedby="email"
-            isInvalid={formik.touched.email && formik.errors.email}
-          />
-          <Form.Text id="email">
-            {formik.touched.email && formik.errors.email ? (
-              <div>{formik.errors.email}</div>
-            ) : null}
-          </Form.Text>
-          <FormInput
-            id="phone"
-            name="phone"
-            label="Phone*"
-            labelStyle={styles["form-label"]}
-            {...formik.getFieldProps("phone")}
-            ariaDescribedby="phone"
-            isInvalid={formik.touched.phone && formik.errors.phone}
-          />
-          <Form.Text id="phone">
-            {formik.touched.phone && formik.errors.phone ? (
-              <div>{formik.errors.phone}</div>
-            ) : null}{" "}
-          </Form.Text>
-        </Col>
-      </Row>
-      <hr className="mt-5" />
-      <Row>
-        <Col lg={6} md={6}>
-          <Form.Group controlId="observations">
-            <Form.Label className={styles["form-label"]}>Additional observations (optional)</Form.Label>
-            <Form.Control
-              className={styles["form-control"]}
-              as="textarea"
-              name="observations"
-              rows={4}
-              maxLength={201}
-              size="lg"
-              {...formik.getFieldProps("observations")}
-              aria-describedby="observations"
-              isInvalid={
-                formik.touched.observations && formik.errors.observations
-              }
+            <FormInput
+              id="phone"
+              name="phone"
+              label="Phone*"
+              labelStyle={styles["form-label"]}
+              {...formik.getFieldProps("phone")}
+              ariaDescribedby="phone"
+              isInvalid={formik.touched.phone && formik.errors.phone}
             />
-            <Form.Text id="observations">
-              {formik.touched.observations && formik.errors.observations ? (
-                <div>{formik.errors.observations}</div>
-              ) : null}
+            <Form.Text id="phone">
+              {formik.touched.phone && formik.errors.phone ? (
+                <div>{formik.errors.phone}</div>
+              ) : null}{" "}
             </Form.Text>
-          </Form.Group>
-        </Col>
-      </Row>
-      <Button
-        type="submit"
-        class="mt-5"
-        name="Reserve"
-        disabled={formik.isSubmitting}
-      />
-    </Form>
+          </Col>
+        </Row>
+        <hr className="mt-5" />
+        <Row>
+          <Col lg={6} md={6}>
+            <Form.Group controlId="observations">
+              <Form.Label className={styles["form-label"]}>
+                Additional observations (optional)
+              </Form.Label>
+              <Form.Control
+                className={styles["form-control"]}
+                as="textarea"
+                name="observations"
+                rows={4}
+                maxLength={201}
+                size="lg"
+                {...formik.getFieldProps("observations")}
+                aria-describedby="observations"
+                isInvalid={
+                  formik.touched.observations && formik.errors.observations
+                }
+              />
+              <Form.Text id="observations">
+                {formik.touched.observations && formik.errors.observations ? (
+                  <div>{formik.errors.observations}</div>
+                ) : null}
+              </Form.Text>
+            </Form.Group>
+          </Col>
+        </Row>
+        <Button
+          type="submit"
+          class="mt-5"
+          name="Reserve"
+          disabled={formik.isSubmitting}
+        />
+      </Form>
   );
 }
 

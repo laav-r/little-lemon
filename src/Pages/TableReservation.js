@@ -20,6 +20,7 @@ const initializeTimes = () => {
   const today = new Date();
   return getAvailableTimes(today);
 };
+
 function TableReservation() {
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
   return (
@@ -41,3 +42,4 @@ function TableReservation() {
 }
 
 export default TableReservation;
+export {updateTimes, initializeTimes};
