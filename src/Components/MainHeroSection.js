@@ -24,7 +24,7 @@ function MainHeroSection() {
             <img
               src="images/restaurantfood.jpg"
               alt="Restaurant"
-              className={styles["hero-section-img"]}
+              className={styles["image"]}
             />
           </Col>
         </Row>

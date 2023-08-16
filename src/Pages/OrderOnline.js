@@ -1,14 +1,13 @@
 import React from "react";
 import Header from "../Components/Header";
+import UnderConstruction from "../Components/UnderConstruction";
 import Footer from "../Components/Footer";
 
 function OrderOnline() {
   return (
     <React.Fragment>
       <Header />
-      <main>
-        
-      </main>
+      <UnderConstruction />
       <Footer />
     </React.Fragment>
   );

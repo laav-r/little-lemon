@@ -1,4 +1,4 @@
-.hero-section-img {
+.image {
   width: 19rem;
   border-radius: 1rem;
   position: absolute;
@@ -9,7 +9,6 @@
     background-color: #495e57;
     font-family: 'Markazi Text', serif;
     height: max-content;
-    margin-top: 5rem;
 }
 
 .title {
