@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import Menu from "./Pages/Menu";
-import TableReservation from "./Pages/TableReservation";
+import BookingPage from "./Pages/BookingPage";
 import OrderOnline from "./Pages/OrderOnline";
 import Login from "./Pages/Login";
 import ConfirmBooking from "./Components/Booking/ConfirmBooking";
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <HomePage />
   },
   { path: "/menu", element: <Menu /> },
-  { path: "/reservations", element: <TableReservation /> },
+  { path: "/reservations", element: <BookingPage /> },
   { path: "/order-online", element: <OrderOnline /> },
   { path: "/login", element: <Login /> },
   { path: "/confirmation", element: <ConfirmBooking /> },
