@@ -21,7 +21,7 @@ const initializeTimes = () => {
   return getAvailableTimes(today);
 };
 
-function BookingPage() {
+function TableReservation() {
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
   return (
     <React.Fragment>
@@ -41,5 +41,5 @@ function BookingPage() {
   );
 }
 
-export default BookingPage;
+export default TableReservation;
 export {updateTimes, initializeTimes};
