@@ -26,6 +26,14 @@ const dishes = [
     content:
       "This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
   },
+  {
+    id: "d4",
+    image: "pizzaImg",
+    alt: "Pizza",
+    title: "Pizza",
+    price:"$12.99",
+    content: "The best pizza in the city. Just a bite and you will feel like in Italy."
+  }
 ];
 
 export default dishes;
